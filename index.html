@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Provinces of Iran</title>
-<meta name="description" content="Provinces of Iran — an interactive map of Iran’s 31 provinces: each capital, population, area, landscapes and landmarks.">
+<title>استان‌های ایران</title>
+<meta name="description" content="استان‌های ایران — نقشه‌ای تعاملی برای آشنایی با ۳۱ استان ایران: مرکز هر استان، جمعیت، مساحت، طبیعت و جاذبه‌های شاخص.">
 <meta name="theme-color" content="#F3F3EF">
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/ProximaNova-Bold.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/ProximaNova-Regular.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/ProximaNova-Black.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Ravi-Bold.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Ravi-Regular.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/Ravi-Black.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/grid-sm.webp" type="image/webp">
 
 <link rel="stylesheet" href="style.css">
-<!-- set language + direction before the first paint (English unless ?lang=fa) -->
-<script>if(/[?&]lang=fa\b/.test(location.search)){document.documentElement.lang='fa';document.documentElement.dir='rtl';}</script>
+<!-- set language + direction before the first paint (Persian unless ?lang=en) -->
+<script>if(/[?&]lang=en\b/.test(location.search)){document.documentElement.lang='en';document.documentElement.dir='ltr';}</script>
 <!-- deferred: downloaded in parallel with the page, run in order once the HTML is parsed -->
 <script src="i18n.js" defer></script>
 <script src="script.js" defer></script>
@@ -114,7 +114,7 @@
       <div class="photo-layer" id="photo-layer" aria-hidden="true"></div>
 
       <!-- top: ink, labels, interactive zones, markers -->
-      <svg class="map-top is-drawing" id="map-top" viewBox="0 0 1440 810" preserveAspectRatio="none" role="group" aria-label="Map of Iran with 31 provinces in five regions">
+      <svg class="map-top is-drawing" id="map-top" viewBox="0 0 1440 810" preserveAspectRatio="none" role="group" aria-label="نقشه ایران با ۳۱ استان در پنج منطقه">
 <!-- MAP-LINES:START -->
 <g class="ink ink-n"><path class="m-ncoast" pathLength="1" d="M1650.5,911L1650.5,911"/>
 <path class="m-ncoast" pathLength="1" d="M1389.2,1128.8L1389.2,1128.8"/>
@@ -441,12 +441,12 @@
 
     <div class="ui" id="ui">
       <div class="ui-fade" aria-hidden="true"></div>
-      <div class="brand"><svg class="brand-ico" viewBox="406 156 586 538" width="17" height="16" aria-hidden="true"><use href="#def-iran-icon"/></svg><b>Iran</b><i></i><span>Capital · Population · Area</span></div>
+      <div class="brand"><svg class="brand-ico" viewBox="406 156 586 538" width="17" height="16" aria-hidden="true"><use href="#def-iran-icon"/></svg><b>ایران</b><i></i><span>مرکز استان · جمعیت · مساحت</span></div>
 
       <header class="intro">
-        <p class="eyebrow">Provinces of Iran</p>
-        <h1 id="headline" aria-label="31 provinces across Iran"><span class="hl" aria-hidden="true"><em>31</em> provinces</span><span class="hl" aria-hidden="true">across Iran</span></h1>
-        <p class="lede">From the Caspian forests to the central desert and the shores of the Persian Gulf, every province of Iran has its own face.<span class="more"> Pick a province on the map to meet its capital, landscapes and landmarks.</span></p>
+        <p class="eyebrow">استان‌های ایران</p>
+        <h1 id="headline" aria-label="سی‌ویک استان در سراسر ایران"><span class="hl" aria-hidden="true"><em>سی‌ویک</em> استان</span><span class="hl" aria-hidden="true">در سراسر ایران</span></h1>
+        <p class="lede">از جنگل‌های کرانه خزر تا کویر مرکزی و ساحل‌های خلیج فارس، هر استان ایران چهره‌ای متفاوت دارد.<span class="more"> یک استان را روی نقشه انتخاب کنید تا مرکز، طبیعت و جاذبه‌های شاخصش را بشناسید.</span></p>
       </header>
 
       <div class="lang" id="lang">
@@ -461,22 +461,22 @@
       </div>
 
       <div class="coords" aria-live="polite">
-        <div><span class="k" id="coord-label">Region</span><span class="v-region" id="coord-region"></span></div>
-        <div><span class="k k-tehran">Tehran</span><span id="coord-tehran"></span></div>
+        <div><span class="k" id="coord-label">منطقه</span><span class="v-region" id="coord-region"></span></div>
+        <div><span class="k k-tehran">تهران</span><span id="coord-tehran"></span></div>
       </div>
 
-      <nav class="regions" aria-label="Choose a province">
-        <h2>Choose a province</h2>
+      <nav class="regions" aria-label="انتخاب استان">
+        <h2>انتخاب استان</h2>
         <ol class="region-list" id="region-list"></ol>
         <div class="ruler" aria-hidden="true"><span class="ruler-mark" id="ruler-mark"></span></div>
       </nav>
 
-      <div class="chips" id="chips" role="tablist" aria-label="Choose a province"></div>
+      <div class="chips" id="chips" role="tablist" aria-label="انتخاب استان"></div>
 
-      <div class="hint" aria-hidden="true">Hover a province · click to explore</div>
+      <div class="hint" aria-hidden="true">روی استان بروید · برای معرفی کلیک کنید</div>
       <div class="foot">
-        <span>31 provinces in 5 regions</span>
-        <button type="button" id="open-credits">Photo credits</button>
+        <span>۳۱ استان در ۵ منطقه</span>
+        <button type="button" id="open-credits">منابع عکس‌ها</button>
       </div>
     </div>
 
@@ -498,18 +498,18 @@
   </main>
 
   <!-- ===================== STORY VIEW ===================== -->
-  <section class="story-view" id="story-view" aria-label="Province profiles" aria-roledescription="slider" aria-hidden="true">
+  <section class="story-view" id="story-view" aria-label="معرفی استان‌ها" aria-roledescription="اسلایدر" aria-hidden="true">
     <div class="track" id="track"></div>
   </section>
   <div class="strip" id="strip">
-    <button class="back" id="back" type="button"><svg class="arr" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M14 8H2M7 3L2 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="txt">Back to map</span><svg class="ico-iran" viewBox="406 156 586 538" width="22" height="20" aria-hidden="true"><defs><linearGradient id="flag-ir" gradientUnits="userSpaceOnUse" x1="0" y1="160" x2="0" y2="690"><stop offset=".333" stop-color="#239F40"/><stop offset=".333" stop-color="#fff"/><stop offset=".667" stop-color="#fff"/><stop offset=".667" stop-color="#DA0000"/></linearGradient></defs><use href="#def-iran-icon"/></svg></button>
+    <button class="back" id="back" type="button"><svg class="arr" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M14 8H2M7 3L2 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="txt">بازگشت به نقشه</span><svg class="ico-iran" viewBox="406 156 586 538" width="22" height="20" aria-hidden="true"><defs><linearGradient id="flag-ir" gradientUnits="userSpaceOnUse" x1="0" y1="160" x2="0" y2="690"><stop offset=".333" stop-color="#239F40"/><stop offset=".333" stop-color="#fff"/><stop offset=".667" stop-color="#fff"/><stop offset=".667" stop-color="#DA0000"/></linearGradient></defs><use href="#def-iran-icon"/></svg></button>
   </div>
 
-  <div class="drag-cursor" id="drag-cursor" aria-hidden="true"><span>‹</span>Drag<span>›</span></div>
+  <div class="drag-cursor" id="drag-cursor" aria-hidden="true"><span>‹</span>بکشید<span>›</span></div>
 
   <dialog class="credits" id="credits" aria-labelledby="credits-title">
-    <button class="close" type="button" aria-label="Close" data-close>×</button>
-    <h2 id="credits-title">Photo credits</h2>
+    <button class="close" type="button" aria-label="بستن" data-close>×</button>
+    <h2 id="credits-title">منابع عکس‌ها</h2>
     <p class="credits-text">این صفحه معرفی کوتاهی از ۳۱ استان ایران است. عکس‌ها طبیعت و شهرهای هر استان را نشان می‌دهند، همگی در ایران گرفته شده‌اند و از آنسپلش (مجوز آنسپلش) و یک مورد از ویکی‌انبار (CC BY-SA) آمده‌اند.</p>
     <ol id="credits-list"></ol>
     <p class="map-data" style="margin-top:16px;font-size:13px">داده‌های نقشه: <bdi>Natural Earth</bdi> (مالکیت عمومی) و <bdi>geoBoundaries / OpenStreetMap</bdi> (<bdi>ODbL</bdi>). تصویر مخروطی همدیس لامبرت.</p>

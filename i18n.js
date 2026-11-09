@@ -1,8 +1,8 @@
 /* =====================================================================
-   LANGUAGE — English by default, Persian with ?lang=fa
+   LANGUAGE — Persian by default, English with ?lang=en
    Everything the visitor reads comes from here; script.js asks T(...) or the EN tables.
    ===================================================================== */
-const LANG = new URLSearchParams(location.search).get('lang') === 'fa' ? 'fa' : 'en';
+const LANG = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'fa';
 const IS_FA = LANG === 'fa';
 document.documentElement.lang = LANG;
 document.documentElement.dir = IS_FA ? 'rtl' : 'ltr';
@@ -143,13 +143,13 @@ const EN = {
   grid: ['Rice paddies of Fuman, Gilan', 'Kazem Dashi rock, Lake Urmia', 'Mangrove forests, Qeshm Island', 'Red beach of Hormuz Island', 'Si-o-se-pol and the Zayandeh River, Isfahan', 'Kaluts of Shahdad, Kerman'],
 };
 
-/* switch: the same page with ?lang=fa, or without it for English */
+/* switch: the same page with ?lang=en, or without it for Persian */
 const FLAGS = {
   fa: '<img src="assets/flag-ir.svg" alt="" width="21" height="15" decoding="async">',   // official flag (Wikimedia Commons, public domain)
   en: '<svg viewBox="0 0 21 15"><rect width="21" height="15" fill="#fff"/><g fill="#b22234"><rect width="21" height="1.154"/><rect y="2.308" width="21" height="1.154"/><rect y="4.615" width="21" height="1.154"/><rect y="6.923" width="21" height="1.154"/><rect y="9.231" width="21" height="1.154"/><rect y="11.538" width="21" height="1.154"/><rect y="13.846" width="21" height="1.154"/></g><rect width="9" height="8.077" fill="#3c3b6e"/></svg>',
 };
 function setLang(code) {
   const u = new URL(location.href);
-  if (code === 'fa') u.searchParams.set('lang', 'fa'); else u.searchParams.delete('lang');
+  if (code === 'en') u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang');
   location.href = u.toString();
 }

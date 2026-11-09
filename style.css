@@ -125,7 +125,8 @@ bdi.ltr { direction: ltr; unicode-bidi: isolate; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 
 /* labels (SVG text, Persian, RTL) */
-.lbl { font-family: var(--f); fill: var(--ink-n); fill-opacity: .85; text-anchor: middle; direction: inherit; font-size: 11px; font-weight: 400; }
+.lbl { font-family: var(--f); fill: var(--ink-n); fill-opacity: .85; text-anchor: middle; direction: rtl; font-size: 11px; font-weight: 400; }
+html[dir="ltr"] .lbl { direction: ltr; }   /* the stage itself is LTR, so labels set their own direction */
 .lbl-water { fill: #8A928F; font-size: 12px; }
 .lbl-small { font-size: 10.5px; }
 .lbl-iran { fill: var(--ink); fill-opacity: 1; font-size: 26px; font-weight: 900; }
@@ -193,7 +194,8 @@ bdi.ltr { direction: ltr; unicode-bidi: isolate; }
   display: flex; gap: 14px; align-items: center;
 }
 .brand b { font-weight: 700; color: var(--ink); }
-.brand .brand-ico { display: block; flex: none; margin-left: -6px; fill: var(--ink); }
+.brand .brand-ico { display: block; flex: none; margin-inline-end: -8px; fill: var(--ink); }   /* icon sits close to the word */
+html[lang="en"] .brand b { text-transform: uppercase; letter-spacing: .04em; }
 .brand i { width: 22px; height: 1px; background: currentColor; display: inline-block; opacity: .5; }
 
 .intro { position: absolute; right: 60px; top: 170px; width: 370px; }

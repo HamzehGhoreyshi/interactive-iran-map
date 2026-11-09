@@ -7,7 +7,7 @@ If you cannot reach that path, ask Hamzeh to also connect the `ai-os` folder.
 Project summary lives in: `~/Desktop/AI/ai-os/10_context/projects/interactive-iran-map.md`
 
 ## This project
-- What it is: Experiment — interactive editorial map of Iran's 31 provinces (hover = province photo inside its border, click = province story card). English by default, Persian at `?lang=fa`.
+- What it is: Experiment — interactive editorial map of Iran's 31 provinces (hover = province photo inside its border, click = province story card). Persian by default, English at `?lang=en`.
 - Tech stack: `index.html` (structure + generated inline map SVG) · `style.css` · `i18n.js` (en/fa strings) · `script.js` (data + behaviour). Vanilla, no framework, no build step to run.
 - How to run it: `node tools/serve.cjs 5173` → http://localhost:5173 (needs a server, not file://).
 - How to deploy it: static hosting; `vercel.json` sets cache headers. GitHub repo planned: HamzehGhoreyshi/interactive-iran-map (footer already links there).

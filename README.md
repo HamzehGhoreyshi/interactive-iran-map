@@ -1,8 +1,12 @@
 # Interactive Iran Map
 
+![Interactive Iran Map — Persian home page](docs/screenshot-fa.jpg)
+
+**Live:** https://interactive-iran-map.vercel.app · English: https://interactive-iran-map.vercel.app/?lang=en
+
 An interactive map of Iran's 31 provinces. Hover a province to see a photo of it inside its border; click to open a card with its capital, population, area, a short description and a three-photo slideshow.
 
-English by default; Persian at `?lang=fa` (right-to-left, Persian digits). The flag button in the top corner switches between them.
+Persian by default (right-to-left, Persian digits); English at `?lang=en`. The flag button in the top corner switches between them.
 
 ## Files
 | File | What it holds |
