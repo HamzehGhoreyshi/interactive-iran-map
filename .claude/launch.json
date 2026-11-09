@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "interactive-iran-map", "runtimeExecutable": "node", "runtimeArgs": ["/Users/hamzeh/Desktop/AI/projects/experiments/interactive-iran-map/tools/serve.cjs", "5173"], "port": 5173 }
+  ]
+}
