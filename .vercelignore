@@ -1,0 +1,9 @@
+# Vercel CLI uploads from this folder (fonts included, unlike git)
+.git
+.claude
+node_modules
+.DS_Store
+tools
+AGENTS.md
+CLAUDE.md
+GEMINI.md

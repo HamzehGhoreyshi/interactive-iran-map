@@ -33,4 +33,4 @@ Province photos are converted with `tools/build-provinces.py`.
 - Province texts are short factual introductions. Population (2023 estimate) and area: Wikipedia, "Provinces of Iran".
 - Photos: Unsplash (Unsplash License) and Wikimedia Commons (CC BY / CC BY-SA), each one checked to be taken in its province; credited on every card and in the credits dialog.
 - Map data: Natural Earth (public domain), geoBoundaries / OpenStreetMap (ODbL).
-- Font: Ravi (Fontiran), a commercial font. The font files are **not** in this repo (licence). To run with Ravi, put the licensed webfonts in `assets/fonts/` (`Ravi-<Weight>.woff2` / `.woff`); without them the page falls back to Vazirmatn / Tahoma.
+- Fonts: Ravi (Fontiran, Persian) and Proxima Nova (English) are commercial fonts, so the font files are **not** in this repo. The live site serves them from the deployment only. To run locally with them, put the licensed webfonts in `assets/fonts/` (`Ravi-<Weight>.woff2`, `ProximaNova-<Weight>.woff2`); without them the page falls back to Vazirmatn / Tahoma (Persian) and Helvetica Neue / Arial (English).

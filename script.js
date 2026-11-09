@@ -518,12 +518,15 @@ function layout() {
     s = Math.min(W / CONFIG.frame.w, H / CONFIG.frame.h);
     x = -(W / s - CONFIG.frame.w) / 2; y = -(H / s - CONFIG.frame.h) / 2;
   }
-  // English mirrors the frame (intro left, list right): the map moves 48 frame-px right so it sits midway between them
-  const mx = !isMobile && !IS_FA ? x - 48 : x;
-  view = { x: mx, y, w: W / s, h: H / s, s };
-  const vb = `${mx.toFixed(2)} ${y.toFixed(2)} ${view.w.toFixed(2)} ${view.h.toFixed(2)}`;
+  // English mirrors the frame (intro left, list right; its names are longer), so on desktop the map is drawn
+  // a little smaller (MAP_ZOOM) and nudged right (MAP_SHIFT, frame px) to leave equal air on both sides
+  const en = !isMobile && !IS_FA, MAP_ZOOM = en ? 1.12 : 1, MAP_SHIFT = en ? 52 : 0;
+  const ms = s / MAP_ZOOM, mw = W / ms, mh = H / ms;
+  const mx = x + (W / s - mw) / 2 - MAP_SHIFT, my = y + (H / s - mh) / 2;
+  view = { x: mx, y: my, w: mw, h: mh, s: ms };
+  const vb = `${mx.toFixed(2)} ${my.toFixed(2)} ${mw.toFixed(2)} ${mh.toFixed(2)}`;
   base.setAttribute('viewBox', vb); top_.setAttribute('viewBox', vb);
-  photoLayer.style.transform = `translate(${-mx * s}px, ${-y * s}px) scale(${s})`;
+  photoLayer.style.transform = `translate(${-mx * ms}px, ${-my * ms}px) scale(${ms})`;
 
   // UI frame shares the same transform on desktop (it is a physical LTR box; content inside is RTL)
   ui.style.transform = isMobile ? '' : `translate(${-x * s}px, ${-y * s}px) scale(${s})`;
@@ -532,7 +535,7 @@ function layout() {
   const k = isMobile ? clamp(.62 / s, .6, 1.2) : 1;
   top_.querySelectorAll('.marker-inner').forEach(g => g.setAttribute('transform', `scale(${k.toFixed(3)})`));
 
-  zonePhotos.forEach(zp => { const [, , w, h] = zp.prov.bbox; if (Media.sizeCanvas(zp.canvas, w, h, s)) Media.draw(zp.t); });
+  zonePhotos.forEach(zp => { const [, , w, h] = zp.prov.bbox; if (Media.sizeCanvas(zp.canvas, w, h, ms)) Media.draw(zp.t); });
   Stories.layout();
 }
 
