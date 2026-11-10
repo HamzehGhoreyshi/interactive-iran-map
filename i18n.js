@@ -11,7 +11,7 @@ const UI = {
   fa: {
     title: 'استان‌های ایران',
     metaDesc: 'استان‌های ایران — نقشه‌ای تعاملی برای آشنایی با ۳۱ استان ایران: مرکز هر استان، جمعیت، مساحت، طبیعت و جاذبه‌های شاخص.',
-    brand: 'ایران', brandSub: 'مرکز استان · جمعیت · مساحت',
+    brand: 'ایران', brandSub: 'جمعیت · مساحت',
     eyebrow: 'استان‌های ایران',
     headlineLabel: 'سی‌ویک استان در سراسر ایران',
     intro: 'از جنگل‌های کرانه خزر تا کویر مرکزی و ساحل‌های خلیج فارس، هر استان ایران چهره‌ای متفاوت دارد.',
@@ -33,7 +33,7 @@ const UI = {
   en: {
     title: 'Provinces of Iran',
     metaDesc: 'Provinces of Iran — an interactive map of Iran’s 31 provinces: each capital, population, area, landscapes and landmarks.',
-    brand: 'Iran', brandSub: 'Capital · Population · Area',
+    brand: 'Iran', brandSub: 'Population · Area',
     eyebrow: 'Provinces of Iran',
     headlineLabel: '31 provinces across Iran',
     intro: 'From the Caspian forests to the central desert and the shores of the Persian Gulf, every province of Iran has its own face.',
