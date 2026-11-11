@@ -12,6 +12,7 @@ Project summary lives in: `~/Desktop/AI/ai-os/10_context/projects/interactive-ir
 - How to run it: `node tools/serve.cjs 5173` → http://localhost:5173 (needs a server, not file://).
 - How to deploy it: static hosting; `vercel.json` sets cache headers. GitHub repo planned: HamzehGhoreyshi/interactive-iran-map (footer already links there).
 - Rules specific to this project:
+  - Portfolio link: the published page must show a visible link to `https://hamzeh.framer.ai/?utm_source=interactive-iran-map&utm_medium=referral`. Check it is there before every deploy.
   - Map geometry is generated: edit `tools/build-map.cjs`, never the SVG paths by hand (they sit between `<!-- MAP-*:START/END -->` markers).
   - Photos: nature and city only, no people. Every photo must be checked to be taken in its province; credit it on the card and in the credits dialog.
   - Font: Ravi (Fontiran, commercial). Do not put the font files in a public repo without a web licence.
